@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.rw.zx.androidocr">
 
+    <!--应用联网-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--调用相机进行拍照-->
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera2.full"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!--图片裁剪临时存储-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--图片裁剪临时存储-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 振动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 屏幕旋转权限 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 开启闪光灯权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
