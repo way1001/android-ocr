@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mainMenu, menu);//这里是调用menu文件夹中的main.xml，在登陆界面label右上角的三角里显示其他功能
+        getMenuInflater().inflate(R.menu.menu, menu);//这里是调用menu文件夹中的main.xml，在登陆界面label右上角的三角里显示其他功能
         return true;
     }
 }
