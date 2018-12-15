@@ -7,9 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!--调用相机进行拍照-->
     <uses-permission android:name="android.permission.CAMERA"/>
-    <!--<uses-feature android:name="android.hardware.camera2.full"/>-->
-    <!--<uses-feature android:name="android.hardware.camera"/>-->
-    <!--<uses-feature android:name="android.hardware.camera.autofocus" />-->
+    <uses-feature android:name="android.hardware.camera"/>
     <!--图片裁剪临时存储-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--图片裁剪临时存储-->
@@ -19,9 +17,6 @@
     <!-- 屏幕旋转权限 -->
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"
         tools:ignore="ProtectedPermissions" />
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="true" />
     <!-- 在SDCard中创建与删除文件权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
