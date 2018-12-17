@@ -19,7 +19,9 @@
                 android:text="图像识别"
                 android:layout_marginLeft="5sp"
                 android:textSize="18sp"
-                android:textColor="#0c0c0c"/>
+                android:textColor="#0c0c0c"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
 
             <TextView
                 android:id="@+id/setting"
