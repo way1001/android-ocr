@@ -1,8 +1,9 @@
 package com.rw.zx.androidocr;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,14 +11,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    //这里是在登录界面label上右上角添加三个点，里面可添加其他功能
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);//这里是调用menu文件夹中的main.xml，在登陆界面label右上角的三角里显示其他功能
-        return true;
+        TextView tv_3 = (TextView)findViewById(R.id.setting);
+
+        //获取assets文件夹里的字体文件
+        Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
+
+        //给指定的TextView加载字体
+        tv_3.setTypeface(font);
     }
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">android-ocr</string>
+    <string name="setting_icon">&#xf0c9;</string>
 </resources>
