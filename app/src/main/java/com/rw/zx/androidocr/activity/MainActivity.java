@@ -13,11 +13,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.rw.zx.androidocr.R;
+import com.rw.zx.androidocr.activity.camera.CameraActivity;
 import com.rw.zx.androidocr.databinding.ActivityMainBinding;
+import com.rw.zx.androidocr.global.Constant;
 import com.rw.zx.androidocr.viewmodel.ImageViewModel;
 
 import java.io.File;
-import java.time.Instant;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -40,13 +41,11 @@ public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //if (data != null) {
-            //String result = data.getExtras().getString("result");
-            //if (result.equals("ok")) {
-                setImageData(Environment.getExternalStorageDirectory()+"/temp/" + "result.bmp");
-           // }
-        //}
-
+        if (data != null) {
+            StringBuffer buffer = new StringBuffer();
+            String imagePath = data.getStringExtra(CameraActivity.IMAGE_PATH);
+            setImageData(imagePath);
+        }
     }
 
     public void setImageData(String imagePath) {

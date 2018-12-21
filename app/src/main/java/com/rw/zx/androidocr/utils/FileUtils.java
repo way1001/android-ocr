@@ -137,4 +137,21 @@ public final class FileUtils {
         }
     }
 
+    /***
+     * 清空文件夹
+     */
+    public static boolean clearDir(File file) {
+        if (!file.exists())
+            return true;
+        if (file.isFile()){//判断是否为文件
+            return false;
+        }else{//不为文件，则为文件夹
+            String[] childFilePath = file.list();//获取文件夹下所有文件相对路径
+            for (String path:childFilePath){
+                File childFile= new File(file.getAbsoluteFile()+"/"+path);
+                childFile.delete();
+            }
+        }
+        return true;
+    }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">android-ocr</string>
     <string name="setting_icon">&#xf0c9;</string>
+    <string name="crop_fail">裁剪失败</string>
 </resources>

@@ -8,6 +8,9 @@
     <!--调用相机进行拍照-->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true"/>
     <!--图片裁剪临时存储-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--图片裁剪临时存储-->
@@ -23,7 +26,8 @@
     <!-- 开启闪光灯权限 -->
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
-    <!--<uses-sdk tools:overrideLibrary="com.github.dmytrodanylyk.android-process-button:library"/>-->
+
+
 
     <application
         android:allowBackup="true"
