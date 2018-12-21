@@ -28,16 +28,16 @@ import com.rw.zx.androidocr.utils.FileUtils;
 import com.rw.zx.androidocr.utils.ImageUtils;
 import com.rw.zx.androidocr.utils.PermissionUtils;
 
+import static com.rw.zx.androidocr.global.Constant.IMAGE_PATH;
+import static com.rw.zx.androidocr.global.Constant.PERMISSION_CODE_FIRST;
+import static com.rw.zx.androidocr.global.Constant.RESULT_CODE;
+
 public class CameraActivity extends Activity implements View.OnClickListener {
 
 
     public final static int    TYPE_IDCARD_FRONT      = 1;//身份证正面
     public final static int    TYPE_IDCARD_BACK       = 2;//身份证反面
-    public final static int    REQUEST_CODE           = 0X11;//请求码
-    public final static int    RESULT_CODE            = 0X12;//结果码
-    public final static int    PERMISSION_CODE_FIRST = 0x13;//权限请求码
-    public final static String TAKE_TYPE              = "take_type";//拍摄类型标记
-    public final static String IMAGE_PATH             = "image_path";//图片路径标记
+
     public static int      mType;//拍摄类型
     public static Activity mActivity;
     private boolean isToast = true;//是否弹吐司，为了保证for循环只弹一次
@@ -295,7 +295,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
             imagePath = buffer.append(Constant.DIR_ROOT).append(System.currentTimeMillis()).append(".").append("resultCrop.jpg").toString();
             if (ImageUtils.save(bitmap, imagePath, Bitmap.CompressFormat.JPEG)) {
                 Intent intent = new Intent();
-                intent.putExtra(CameraActivity.IMAGE_PATH, imagePath);
+                intent.putExtra(Constant.IMAGE_PATH, imagePath);
                 setResult(RESULT_CODE, intent);
                 finish();
             }
@@ -328,7 +328,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
 
                     if (ImageUtils.save(bitmap, imagePath, Bitmap.CompressFormat.JPEG)) {
                         Intent intent = new Intent();
-                        intent.putExtra(CameraActivity.IMAGE_PATH, imagePath);
+                        intent.putExtra(Constant.IMAGE_PATH, imagePath);
                         setResult(RESULT_CODE, intent);
                         finish();
                     }

@@ -51,6 +51,7 @@
             android:paddingLeft="2dp"
             android:hint="OCR识别"
             android:textSize="20sp"
+            android:text="@={imageViewModel.ocrWord}"
         />
 
         <LinearLayout
