@@ -3,6 +3,7 @@ package com.rw.zx.androidocr.activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -12,9 +13,11 @@ import com.bumptech.glide.Glide;
 import com.rw.zx.androidocr.R;
 import com.rw.zx.androidocr.databinding.ActivityMainBinding;
 import com.rw.zx.androidocr.global.Constant;
+import com.rw.zx.androidocr.handler.opencvHandler.OpencvHandler;
 import com.rw.zx.androidocr.viewmodel.ImageViewModel;
 
 import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -40,8 +43,14 @@ public class MainActivity extends AppCompatActivity  {
         if (data != null) {
             StringBuffer buffer = new StringBuffer();
             String imagePath = data.getStringExtra(Constant.IMAGE_PATH);
-            setImageData(imagePath);
-            imageViewModel.ocr(imagePath);
+
+            try {
+                imagePath = OpencvHandler.handleImage(Uri.parse(imagePath));
+                setImageData(imagePath);
+                imageViewModel.ocr(imagePath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

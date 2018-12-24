@@ -1,1 +1,2 @@
 include ':app', ':takephoto_library', ':focussurfaceview'
+include ':openCVLibrary344'

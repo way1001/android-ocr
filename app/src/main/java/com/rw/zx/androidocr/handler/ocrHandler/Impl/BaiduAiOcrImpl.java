@@ -1,6 +1,5 @@
 package com.rw.zx.androidocr.handler.ocrHandler.Impl;
 
-import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 
 import com.baidu.ocr.sdk.OCR;
@@ -9,19 +8,14 @@ import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
 import com.baidu.ocr.sdk.model.GeneralBasicParams;
 import com.baidu.ocr.sdk.model.GeneralResult;
-import com.baidu.ocr.sdk.model.WordSimple;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rw.zx.androidocr.bean.OcrResult;
-import com.rw.zx.androidocr.global.Constant;
-import com.rw.zx.androidocr.handler.ocrHandler.OcrHandlerInterface;
+import com.rw.zx.androidocr.handler.ocrHandler.OcrHandler;
 import com.rw.zx.androidocr.model.OcrModel;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 
-public class BaiduAiOcrImpl implements OcrHandlerInterface {
+public class BaiduAiOcrImpl implements OcrHandler {
 
     Context context;
     OcrModel ocrModel;

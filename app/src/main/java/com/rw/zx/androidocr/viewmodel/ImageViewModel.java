@@ -1,12 +1,9 @@
 package com.rw.zx.androidocr.viewmodel;
 
 import android.app.Activity;
-import android.content.Intent;
 
 import com.rw.zx.androidocr.activity.camera.CameraActivity;
 import com.rw.zx.androidocr.databinding.ActivityMainBinding;
-import com.rw.zx.androidocr.handler.ocrHandler.Impl.BaiduAiOcrImpl;
-import com.rw.zx.androidocr.handler.ocrHandler.OcrHandlerInterface;
 import com.rw.zx.androidocr.model.OcrModel;
 
 public class ImageViewModel {
