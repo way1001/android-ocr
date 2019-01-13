@@ -80,6 +80,8 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                     camera.setDisplayOrientation(0);
                     parameters.setRotation(0);
                 }
+
+
                 Camera.Size bestSize = getBestSize(parameters.getSupportedPreviewSizes());
                 if (bestSize != null) {
                     parameters.setPreviewSize(bestSize.width, bestSize.height);

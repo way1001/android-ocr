@@ -149,7 +149,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
 
 
         float width = (int) (screenMinSize * 0.95f);
-        float height = (int) (width * 0.25f);
+        float height = (int) (width * 0.15f);
         LinearLayout.LayoutParams containerParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)height);
         LinearLayout.LayoutParams cropParams = new LinearLayout.LayoutParams((int) width, (int) height);
         mLlCameraCropContainer.setLayoutParams(containerParams);
@@ -216,7 +216,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void run() {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                        bitmap = ImageUtils.rotateBitmap(bitmap, 90);
+                        //bitmap = ImageUtils.rotateBitmap(bitmap, 90);
 
                         /*计算裁剪位置*/
                         float left, top, right, bottom;

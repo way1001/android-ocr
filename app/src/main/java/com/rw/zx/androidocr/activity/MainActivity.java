@@ -44,13 +44,16 @@ public class MainActivity extends AppCompatActivity  {
             StringBuffer buffer = new StringBuffer();
             String imagePath = data.getStringExtra(Constant.IMAGE_PATH);
 
-            try {
-                imagePath = OpencvHandler.handleImage(Uri.parse(imagePath));
-                setImageData(imagePath);
-                imageViewModel.ocr(imagePath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            setImageData(imagePath);
+            imageViewModel.ocr(imagePath);
+
+//            try {
+//                imagePath = OpencvHandler.handleImage(Uri.parse(imagePath));
+//                setImageData(imagePath);
+//                imageViewModel.ocr(imagePath);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 
