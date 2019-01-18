@@ -10,21 +10,21 @@ import com.baidu.ocr.sdk.model.GeneralBasicParams;
 import com.baidu.ocr.sdk.model.GeneralResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rw.zx.androidocr.handler.ocrHandler.OcrHandler;
-import com.rw.zx.androidocr.model.OcrModel;
+import com.rw.zx.androidocr.model.BaiduOcrModel;
 
 import java.io.File;
 
 
 public class BaiduAiOcrImpl implements OcrHandler {
 
-    Context context;
-    OcrModel ocrModel;
+    private Context context;
+    private BaiduOcrModel baiduOcrModel;
     static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public BaiduAiOcrImpl(Context context, OcrModel ocrModel) {
+    public BaiduAiOcrImpl(Context context, BaiduOcrModel baiduOcrModel) {
 
         this.context = context;
-        this.ocrModel = ocrModel;
+        this.baiduOcrModel = baiduOcrModel;
         OCR.getInstance(context).initAccessTokenWithAkSk(new OnResultListener<AccessToken>() {
             @Override
             public void onResult(AccessToken result) {
@@ -62,6 +62,6 @@ public class BaiduAiOcrImpl implements OcrHandler {
 
     @Override
     public void onResult(String result) {
-        ocrModel.onResult(result);
+        baiduOcrModel.onResult(result);
     }
 }

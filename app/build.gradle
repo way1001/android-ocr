@@ -37,6 +37,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.0.pr3'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.9.0.pr3'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.0.pr3'
+    implementation 'com.rmtheis:tess-two:9.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
     implementation project(':openCVLibrary344')
 }
