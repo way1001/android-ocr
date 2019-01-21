@@ -2,17 +2,15 @@ package com.rw.zx.androidocr.viewmodel;
 
 import android.app.Activity;
 
+import com.rw.zx.androidocr.activity.ConfigActivity;
 import com.rw.zx.androidocr.activity.camera.CameraActivity;
 import com.rw.zx.androidocr.databinding.ActivityMainBinding;
-import com.rw.zx.androidocr.model.BaiduOcrModel;
 import com.rw.zx.androidocr.model.OcrModel;
 import com.rw.zx.androidocr.model.TesseractOcrModel;
 
 public class ImageViewModel {
     public final Activity activity;
     private final ActivityMainBinding binding;
-    //private final BaiduOcrModel baiduOcrModel;
-    //private final TesseractOcrModel tesseractOcrModel;
     private OcrModel ocrModel;
 
     public String ocrWord = "";
@@ -27,6 +25,10 @@ public class ImageViewModel {
 
     public void onClick() {
         CameraActivity.toCameraActivity(activity);
+    }
+
+    public void onConfig() {
+        ConfigActivity.toConfigActivity(activity);
     }
 
     public void ocr(String filePath) {

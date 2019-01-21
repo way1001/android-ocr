@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="configViewModel"
+            type="com.rw.zx.androidocr.viewmodel.ConfigViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10sp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider"
+            android:showDividers="end"
+            android:dividerPadding="1.5dp">
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/back_icon"
+                android:layout_marginLeft="30sp"
+                android:clickable="true"
+                android:textColor="@drawable/setting_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="设置"
+                android:textSize="18sp"
+                android:textColor="#0c0c0c"
+                android:gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
