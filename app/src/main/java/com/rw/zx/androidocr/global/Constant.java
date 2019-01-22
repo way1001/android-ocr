@@ -29,4 +29,8 @@ public class Constant {
 
     public final static String TesseractDataPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/tessdata/";
 
+    public final static int CONFIG_BACK = 0x14;
+    public final static String CONFIG_ISLOCALOCR = "isLocalOcr";//是否使用本地ocr识别
+    public final static String CONFIG_ISIMAGEHANDLE = "isImageHandle";//是否使用opencv处理图像
+
 }

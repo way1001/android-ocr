@@ -98,19 +98,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data != null) {
-            StringBuffer buffer = new StringBuffer();
-            String imagePath = data.getStringExtra(Constant.IMAGE_PATH);
 
-            setImageData(imagePath);
-            imageViewModel.ocr(imagePath);
-
-//            try {
-//                imagePath = OpencvHandler.handleImage(Uri.parse(imagePath));
-//                setImageData(imagePath);
-//                imageViewModel.ocr(imagePath);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            switch (resultCode) {
+                case Constant.RESULT_CODE:
+                {
+                    StringBuffer buffer = new StringBuffer();
+                    String imagePath = data.getStringExtra(Constant.IMAGE_PATH);
+                    if (imageViewModel.getIsImageHandle()) {
+                        try {
+                            imagePath = OpencvHandler.handleImage(Uri.parse(imagePath));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    setImageData(imagePath);
+                    imageViewModel.ocr(imagePath);
+                }
+                break;
+                case Constant.CONFIG_BACK:
+                {
+                    imageViewModel.getConfig();
+                }
+                break;
+            }
         }
     }
 

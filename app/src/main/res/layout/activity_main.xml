@@ -36,6 +36,7 @@
                 android:text="@string/setting_icon"
                 android:layout_marginRight="5sp"
                 android:clickable="true"
+                android:onClick="@{()->imageViewModel.onConfig()}"
                 android:textColor="@drawable/setting_selector"/>
         </RelativeLayout>
 

@@ -296,7 +296,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
             if (ImageUtils.save(bitmap, imagePath, Bitmap.CompressFormat.JPEG)) {
                 Intent intent = new Intent();
                 intent.putExtra(Constant.IMAGE_PATH, imagePath);
-                setResult(RESULT_CODE, intent);
+                setResult(Constant.RESULT_CODE, intent);
                 finish();
             }
         }
