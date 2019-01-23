@@ -6,4 +6,5 @@
     <color name="preview_mock">#9a000000</color>
     <color name="color_000000">#000000</color>
     <color name="color_afff">#afff</color>
+    <color name="colorDivider">#c0c0c0</color>
 </resources>

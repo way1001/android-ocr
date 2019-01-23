@@ -64,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
         }
         //循环复制2中字库
         String datafilepath = Constant.TesseractDataPath + "/eng.traineddata";
-        copyFile(datafilepath);
+
+        File dataFile = new File(datafilepath);
+        if (!dataFile.exists())
+            copyFile(datafilepath);
     }
 
     private void copyFile(String datafilepath) {
