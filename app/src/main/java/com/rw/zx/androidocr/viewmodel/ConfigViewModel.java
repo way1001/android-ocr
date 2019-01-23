@@ -29,6 +29,10 @@ public class ConfigViewModel {
     }
 
     public void onBack() {
+        activity.finish();
+    }
+
+    public void onSaveConfig() {
         SharedPreferences.Editor editor = shareData.edit();
         editor.putBoolean(Constant.CONFIG_ISLOCALOCR, isLocalOcr);
         editor.putBoolean(Constant.CONFIG_ISIMAGEHANDLE, isImageHandle);

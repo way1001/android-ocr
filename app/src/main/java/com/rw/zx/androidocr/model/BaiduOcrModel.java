@@ -2,6 +2,7 @@ package com.rw.zx.androidocr.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rw.zx.androidocr.bean.OcrResult;
+import com.rw.zx.androidocr.bean.WordResult;
 import com.rw.zx.androidocr.handler.ocrHandler.Impl.BaiduAiOcrImpl;
 import com.rw.zx.androidocr.handler.ocrHandler.OcrHandler;
 import com.rw.zx.androidocr.viewmodel.ImageViewModel;
@@ -30,13 +31,15 @@ public class BaiduOcrModel implements OcrModel{
     public void onResult(String result) {
         try {
             OcrResult ocrResult = objectMapper.readValue(result, OcrResult.class);
-            String word = "";
+            StringBuilder word = new StringBuilder();
             if (ocrResult.words_result_num > 0) {
-                word = ocrResult.words_result.get(0).getWords();
+                for (WordResult wordResult: ocrResult.words_result) {
+                    word.append(wordResult.getWords());
+                }
             } else {
-                word = "no result";
+                word.append("no result");
             }
-            imageViewModel.setResultString(word);
+            imageViewModel.setResultString(word.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
